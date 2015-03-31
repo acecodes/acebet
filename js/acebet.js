@@ -11,12 +11,14 @@
         var collectionId = 19160;
 
         var currencyPairs = {
-            'USD/EUR':'euro',
-            'USD/JPY':'jpy',
-            'USD/GBP':'gbp'
+            'USD/EUR': 'euro',
+            'USD/JPY': 'jpy',
+            'USD/GBP': 'gbp'
         };
 
+        // Day for comparing date inputs - anything less will not submit
         this.today = new Date();
+
         // Syncano functions
         this.createBet = function createBet(title, currencyPair, prediction, predictionDate) {
 
@@ -31,13 +33,15 @@
             };
 
             syncano.Data.new(projectId, collectionId, params, function(data) {
-                console.log(data);
-                var date = new Date(data.additional.prediction_date).toDateString();
-                var div = '#' + currencyPairs[currencyPair];
-                var count = $(div + '-num-bets').text();
-                $(div + '-latest-bet').html(data.additional.prediction);
-                $(div + '-num-bets').html(Number(count) + 1);
-                $(div + '-latest-bet-date').text(date);
+                if (data.additional.prediction_date !== ';drop table;') {
+                    console.log(data);
+                    var date = new Date(data.additional.prediction_date).toDateString();
+                    var div = '#' + currencyPairs[currencyPair];
+                    var count = $(div + '-num-bets').text();
+                    $(div + '-latest-bet').html(data.additional.prediction);
+                    $(div + '-num-bets').html(Number(count) + 1);
+                    $(div + '-latest-bet-date').text(date);
+                }
             });
         };
 

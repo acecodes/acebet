@@ -1,35 +1,33 @@
 body {
     padding-top: 70px;
 }
-
-.img-center {
-    margin: 0 auto;
-}
-
 footer {
     margin: 50px 0;
 }
-
-.bets {
-    font-size: 1.2em;
-}
-
 button {
-    float:none;
+    float: none;
     margin-top: 20px;
-
 }
-
 label {
     margin-top: 20px;
 }
-
-.img-center  {
-    margin: 20px auto;
+.img-center {
+    margin: 0 auto;
+}
+.bets {
+    font-size: 1.2em;
+    font-style: italic;
 }
 
+.bets span {
+    font-style: bold;
+    font-size: 1.2em;
+}
+.img-center {
+    margin: 20px auto;
+}
 #note {
-    text-align:center;
-    margin-top:4%;
-    font-style:italic;
+    text-align: center;
+    margin-top: 4%;
+    font-style: italic;
 }

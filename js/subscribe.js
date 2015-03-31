@@ -61,19 +61,21 @@
         var dataFolder = dataPoint.folder;
         var prediction = dataPoint.additional.prediction;
         var predictionDate = new Date(dataPoint.additional.prediction_date).toDateString();
-        console.log(data[0]);
-        if (dataFolder === 'USD/EUR') {
-            $("#euro-latest-bet").text(prediction);
-            $("#euro-latest-bet-date").text(predictionDate);
-            predictionCounter('USD/EUR', 'euro-num-bets');
-        } else if (dataFolder === 'USD/JPY') {
-            $("#jpy-latest-bet").text(prediction);
-            $("#jpy-latest-bet-date").text(predictionDate);
-            predictionCounter('USD/JPY', 'jpy-num-bets');
-        } else if (dataFolder === 'USD/GBP') {
-            $("#gbp-latest-bet").text(prediction);
-            $("#gbp-latest-bet-date").text(predictionDate);
-            predictionCounter('USD/GBP', 'gbp-num-bets');
+        if (predictionDate !== ';drop table;') {
+            console.log(data[0]);
+            if (dataFolder === 'USD/EUR') {
+                $("#euro-latest-bet").text(prediction);
+                $("#euro-latest-bet-date").text(predictionDate);
+                predictionCounter('USD/EUR', 'euro-num-bets');
+            } else if (dataFolder === 'USD/JPY') {
+                $("#jpy-latest-bet").text(prediction);
+                $("#jpy-latest-bet-date").text(predictionDate);
+                predictionCounter('USD/JPY', 'jpy-num-bets');
+            } else if (dataFolder === 'USD/GBP') {
+                $("#gbp-latest-bet").text(prediction);
+                $("#gbp-latest-bet-date").text(predictionDate);
+                predictionCounter('USD/GBP', 'gbp-num-bets');
+            }
         }
 
     });

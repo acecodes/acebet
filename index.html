@@ -43,9 +43,9 @@
                 <h3>US Dollar/Euro</h3>
                 <h4 id="currentEUR">{{ app.EUR }}</h4>
                 <hr />
-                <div class="bets">Latest predicted price:
+                <div class="bets">Last predicted price:
                     <span id="euro-latest-bet">0</span></div>
-                <div class="bets">Predicted date:
+                <div class="bets">Last predicted price date:
                     <span id="euro-latest-bet-date">0</span></div>
                 <div class="bets">Number of predictions:
                     <span id="euro-num-bets">0</span></div>
@@ -62,7 +62,7 @@
                     <br />
                     <input type="date" ng-model="app.dateEUR">
                     <br />
-                    <button type="submit" ng-click="app.priceEUR >= 0 && app.createBet('USD/EUR - ' + app.priceEUR, 'USD/EUR', app.priceEUR, app.dateEUR);">Make prediction</button>
+                    <button type="submit" ng-click="app.priceEUR >= 0 && app.dateEUR >= app.today &&app.createBet('USD/EUR - ' + app.priceEUR, 'USD/EUR', app.priceEUR, app.dateEUR);">Make prediction</button>
                 </form>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
@@ -70,9 +70,9 @@
                 <h3>US Dollar/Yen</h3>
                 <h4 id="currentJPY">{{ app.JPY }}</h4>
                 <hr />
-                <div class="bets">Latest predicted price:
+                <div class="bets">Last predicted price:
                     <span id="jpy-latest-bet">0</span></div>
-                <div class="bets">Predicted date:
+                <div class="bets">Last predicted price date:
                     <span id="jpy-latest-bet-date">0</span></div>
                 <div class="bets">Number of predictions:
                     <span id="jpy-num-bets">0</span></div>
@@ -89,7 +89,7 @@
                     <br />
                     <input type="date" ng-model="app.dateJPY">
                     <br />
-                    <button type="submit" ng-click="app.priceJPY >= 0 && app.createBet('USD/JPY - ' + app.priceJPY, 'USD/JPY', app.priceJPY, app.dateJPY);">Make prediction</button>
+                    <button type="submit" ng-click="app.priceJPY >= 0 && app.dateJPY >= app.today &&app.createBet('USD/JPY - ' + app.priceJPY, 'USD/JPY', app.priceJPY, app.dateJPY);">Make prediction</button>
                 </form>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
@@ -97,9 +97,9 @@
                 <h3>US Dollar/British Pound</h3>
                 <h4 id="currentGBP">{{ app.GBP }}</h4>
                 <hr />
-                <div class="bets">Latest predicted price:
+                <div class="bets">Last predicted price:
                     <span id="gbp-latest-bet">0</span></div>
-                <div class="bets">Predicted date:
+                <div class="bets">Last predicted price date:
                     <span id="gbp-latest-bet-date">0</span></div>
                 <div class="bets">Number of predictions:
                     <span id="gbp-num-bets">0</span></div>
@@ -116,7 +116,7 @@
                     <br />
                     <input type="date" ng-model="app.dateGBP">
                     <br />
-                    <button type="submit" ng-click="app.priceGBP >= 0 && app.createBet('USD/GBP - ' + app.priceGBP, 'USD/GBP', app.priceGBP, app.dateGBP);">Make prediction</button>
+                    <button type="submit" ng-click="app.priceGBP >= 0 && app.dateGBP >= app.today && app.createBet('USD/GBP - ' + app.priceGBP, 'USD/GBP', app.priceGBP, app.dateGBP);">Make prediction</button>
                 </form>
             </div>
 
